@@ -1,24 +1,30 @@
 import React from 'react'
+import "./styles.css"
 
 const Header = () => {
+    const menu = [
+        { label: "Colegios", path: "!#" },
+        { label: "Información", path: "!#" },
+        { label: "Sobre Nosotros", path: "!#" },
+        { label: "Contacto", path: "!#" },
+        { label: "Servicios", path: "!#" },
+    ]
     return (
         <>
             <div className="cabecera-seccion">
-                <a href="#" className="logo-container">
+                <a href="!#" className="logo-container">
                     <h1>Mi Cole</h1>
                     <i className="fas fa-user-graduate logo-icon"></i>
                 </a>
                 <nav className="cabecera-navegacion">
                     <ul>
-                        <li><a href="#">Colegios</a></li>
-                        <li><a href="#">Información</a></li>
-                        <li><a href="#">Sobre Nosotros</a></li>
-                        <li><a href="#">Contacto</a></li>
-                        <li><a href="#">Servicios</a></li>
+                        {menu.map(item => (
+                            <li key={item.label}><a href={item.path}>{item.label}</a></li>
+                        ))}
+
                     </ul>
                 </nav>
             </div>
-
 
             <header className="contenido-seccion">
                 <div className="contenido-imagen"></div>
