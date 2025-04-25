@@ -1,22 +1,17 @@
 import './App.css';
 import { Footer, Header } from './components'
-import Colegios from './paginas/Colegios';
 
 function App() {
   return (
     <div className="App">
-
-      
-
-     <Header></Header>
-     <Colegios />
+      <Header></Header>
 
       <main>
         {/* 3. Sección "Academias de Perú" */}
         <section className="seccion-academias">
           <h2>Las mejores academias de Perú</h2>
           <div className="tarjetas-1">
-             <div className="tarjeta-2">
+            <div className="tarjeta-2">
               <div className="imagen-leccion-placeholder">
 
               </div>
