@@ -1,0 +1,246 @@
+/* Estilos para el componente Nosotros */ 
+
+/* Estilos generales para la página Nosotros */
+.nosotros-pagina {
+  font-family: sans-serif; 
+  width: 100%; /* Cambio max-width por width: 100% para ocupar todo el ancho */
+  margin: 0; /* Eliminar margen automático */
+  padding: 0; /* Asegurar que no haya padding */
+  color: #333; 
+  background-color: #f8f9fa;
+  overflow-x: hidden; /* Evitar scroll horizontal */
+}
+
+/* Banner Superior */
+.sobre-nosotros-banner {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #1a2980 100%); 
+  color: white;
+  width: 80%;
+  margin: 0 auto; /* Centrar el contenedor */
+  padding-top: 40px ;
+  padding-bottom: 1px;
+  text-align: center;
+  margin-bottom: 5px;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5); /* Sombra más visible */
+  transition: all 0.3s ease;
+  position: relative; /* Añadido */
+  z-index: 1;         /* Añadido */
+}
+
+.nosotros-banner h1 {
+  font-size: 2.8em; /* Tamaño grande */
+  font-weight: bold;
+  color: #444; /* Un gris oscuro para el título */
+  margin: 0;
+}
+
+/* Sección Sobre Nosotros */
+.sobrenosotros-seccion {
+  background-color: #fff; /* Fondo blanco */
+  max-width: 800px; /* Ancho máximo */
+  margin: 0 auto 40px auto; /* Centrado horizontal y margen inferior */
+  padding: 80px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+}
+
+.nosotros-perfil-img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%; /* Círculo perfecto */
+  margin: 0 auto 20px auto; /* Centrado y margen inferior */
+  border: 5px solid #f9a9a0; /* Borde rojo como en la imagen */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  display: block;
+}
+
+.nosotros-sobre-nosotros-seccion h2 {
+  font-size: 2.2em;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #2c3e50; /* Azul oscuro/grisáceo */
+}
+
+.nosotros-descripcion {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #555; /* Gris medio */
+  max-width: 600px; /* Limitar ancho del párrafo */
+  margin: 0 auto 25px auto; /* Centrado y margen inferior */
+}
+
+.nosotros-credito-imagen {
+  font-size: 0.8em;
+  color: #aaa;
+  margin-bottom: 25px;
+}
+.nosotros-iconos-sociales {
+  display: flex;
+  gap: 15px; /* Espacio entre iconos */
+}
+
+.icono-social {
+  font-size: 1.5em; /* Tamaño de iconos placeholder */
+  color: #e74c3c; /* Rojo para los iconos */
+  cursor: pointer;
+  /* Aquí podrías usar URLs de fondo para imágenes reales de iconos */
+}
+
+/* Botones de Acción */
+.nosotros-botones-accion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px; /* Espacio entre botones */
+  flex-wrap: wrap; /* Permitir que los botones pasen a la siguiente línea en pantallas pequeñas */
+}
+
+.boton-principal,
+.boton-secundario {
+  padding: 12px 25px;
+  border-radius: 50px; /* Botones redondeados */
+  font-weight: 600;
+  font-size: 0.9em;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  display: inline-block;
+  text-align: center;
+}
+
+.boton-principal {
+  background-color: #e74c3c; /* Rojo */
+  color: #fff;
+}
+
+.boton-principal:hover {
+  background-color: #c0392b; /* Rojo más oscuro */
+}
+
+.boton-secundario {
+  background-color: #fff;
+  color: #555;
+  border: 2px solid #ccc; /* Borde gris */
+}
+
+.boton-secundario:hover {
+  background-color: #f1f1f1;
+  border-color: #aaa;
+  color: #333;
+}
+
+
+/* Sección Proceso */
+.nosotros-proceso-seccion {
+  background-color: #f0f0f0; /* Fondo gris muy claro */
+  padding: 40px 20px;
+  margin-bottom: 30px;
+}
+
+.nosotros-proceso-container {
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
+.nosotros-proceso-container h2 {
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nosotros-proceso-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.nosotros-proceso-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  position: relative;
+  padding: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.nosotros-proceso-icono-wrap {
+  text-align: center;
+  flex-shrink: 0;
+  width: 80px;
+}
+
+.nosotros-proceso-icono {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Colores específicos para iconos placeholder */
+.nosotros-proceso-icono.discovery {
+  background-color: #1abc9c; /* Verde/Teal */
+}
+.nosotros-proceso-icono.research {
+  background-color: #f1c40f; /* Amarillo */
+}
+.nosotros-proceso-icono.content {
+  background-color: #e74c3c; /* Rojo */
+}
+
+.nosotros-proceso-icono-wrap span {
+  font-size: 0.95em;
+  font-weight: 700;
+  color: #777;
+  text-transform: uppercase;
+  display: block;
+}
+
+/* Línea vertical */
+.nosotros-proceso-item:after {
+  content: '';
+  position: absolute;
+  left: 120px; /* Ajustar según sea necesario */
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: #ddd;
+}
+
+.nosotros-proceso-item p {
+  font-size: 0.95em;
+  line-height: 1.6;
+  color: #666;
+  margin: 0;
+  text-align: left;
+  padding-left: 40px;
+  flex: 1;
+}
+
+/* Pie de Página */
+.nosotros-footer {
+  background-color: #e0e0e0; /* Mismo gris que el banner */
+  padding: 20px;
+  text-align: center;
+}
+
+.nosotros-footer p {
+  margin: 0;
+  color: #555;
+} 
