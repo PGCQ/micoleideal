@@ -40,8 +40,8 @@ const ContentIcon = () => (
 
 const Nosotros = () => {
     return (
-        <div style={{ width: '100%', margin: 0, padding: 0, overflow: 'hidden' }}>
-            <NavigationBar /> {/* <-- Usar NavigationBar */} 
+        <>
+            <NavigationBar /> 
             <div className="nosotros-pagina">
                 {/* Banner Superior */}
                 {/* Clases de Tailwind removidas */}
@@ -72,7 +72,7 @@ const Nosotros = () => {
                 
                 <div className="nosotros-proceso-seccion">
                     <div className="nosotros-proceso-container">
-                        <h2>PROCESS</h2> {/* Título agregado */}
+                        <h2>Metas Grupo 8</h2> {/* Título agregado */}
                         <div className="nosotros-proceso-grid">
                             <div className="nosotros-proceso-item">
                                 <div className="nosotros-proceso-icono-wrap">
@@ -103,9 +103,10 @@ const Nosotros = () => {
                         </div>
                     </div>
                 </div>
+
+                <Footer />
             </div>
-            <Footer />
-        </div>
+        </>
     );
 };
 

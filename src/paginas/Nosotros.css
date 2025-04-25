@@ -132,10 +132,8 @@
   color: #333;
 }
 
-
-/* Sección Proceso */
 .nosotros-proceso-seccion {
-  background-color: #f0f0f0; /* Fondo gris muy claro */
+  background-color: #f0f0f0; 
   padding: 40px 20px;
   margin-bottom: 30px;
 }

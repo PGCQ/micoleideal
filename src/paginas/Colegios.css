@@ -1,0 +1,92 @@
+.colegios-container {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.titulo-principal {
+    text-align: center;
+    background-color: var(--primary-color);
+    max-width: 100%;
+    padding: 40px;
+    margin-top: -20px;
+    border-radius: 0 0 10px 10px;
+    font-size: 32px;
+    color: #333;
+}
+
+.sede-container {
+    display: flex;
+    margin-bottom: 60px;
+    align-items: center;
+    gap: 30px;
+}
+
+.sede-container.reverse {
+    flex-direction: row;
+}
+
+.sede-imagen {
+    width: 350px;
+    height: 250px;
+    flex-shrink: 0;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.sede-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.sede-imagen img:hover {
+    transform: scale(1.05);
+}
+
+.sede-info {
+    flex-grow: 1;
+}
+
+.sede-titulo {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #444;
+    background-color: var(--secondary-color);
+    padding: 10px;
+    width: 200px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+    position: relative;
+    bottom: 10px;
+}
+
+.sede-descripcion {
+    line-height: 1.6;
+    color: #555;
+    text-align: justify;
+}
+
+.pie-pagina {
+    background-color: #ccc;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    .sede-container, .sede-container.reverse {
+        flex-direction: column;
+    }
+    
+    .sede-imagen {
+        width: 100%;
+        height: 200px;
+    }
+}

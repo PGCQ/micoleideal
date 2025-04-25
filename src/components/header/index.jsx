@@ -5,7 +5,7 @@ const Header = () => {
     const menu = [
         { label: "Colegios", path: "!#" },
         { label: "Información", path: "!#" },
-        { label: "Sobre Nosotros", path: "!#" },
+        { label: "Sobre Nosotros", path: "../paginas/Nosotros.jsx" },
         { label: "Contacto", path: "!#" },
         { label: "Servicios", path: "!#" },
     ]
