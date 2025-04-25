@@ -1,6 +1,5 @@
 import React from 'react';
-// Ajustamos la ruta de importación de estilos
-import "./header/styles.scss"; 
+import "./header/styles.scss";
 
 const NavigationBar = () => {
     const menu = [
@@ -11,11 +10,10 @@ const NavigationBar = () => {
         { label: "Servicios", path: "!#" },
     ];
     return (
-        <div className="cabecera-seccion">
+        <div className="cabecera">
             <a href="!#" className="logo-container">
                 <h1>Mi Cole</h1>
-                {/* Podrías necesitar ajustar la ruta o forma de incluir este icono si no usas FontAwesome globalmente */}
-                <i className="fas fa-user-graduate logo-icon"></i> 
+                <i className="fas fa-user-graduate logo-icon"></i>
             </a>
             <nav className="cabecera-navegacion">
                 <ul>
