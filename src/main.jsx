@@ -13,6 +13,7 @@ createRoot(document.getElementById('root')).render(
     {/* <Colegios /> */}
     {/* <Contacto /> */}
     <App />
+    
 
   </StrictMode>,
 )
