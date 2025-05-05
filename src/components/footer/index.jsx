@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import "./styles.css"
 
 const Footer = () => {
@@ -6,11 +7,11 @@ const Footer = () => {
   const year = new Date().getFullYear()
 
   const enlaces = [
-    { label: "Colegios", path: "!#" },
-    { label: "Información", path: "!#" },
-    { label: "Sobre", path: "!#" },
-    { label: "Contacto", path: "!#" },
-    { label: "Servicios", path: "!#" }
+    { label: "Colegios", path: "/colegios" },
+    { label: "Información", path: "/informacion" },
+    { label: "Sobre Nosotros", path: "/nosotros" },
+    { label: "Contacto", path: "/contacto" },
+    { label: "Servicios", path: "/servicios" }
   ]
 
   const contactos = [
@@ -36,7 +37,11 @@ const Footer = () => {
         <div className="footer-enlaces">
           <h3>Enlaces</h3>
           <ul>
-            {enlaces.map(enlace => (<li key={enlace.label}><a href={enlace.path}>{enlace.label}</a></li>))}
+            {enlaces.map(enlace => (
+              <li key={enlace.label}>
+                <Link to={enlace.path}>{enlace.label}</Link>
+              </li>
+            ))}
           </ul>
         </div>
 

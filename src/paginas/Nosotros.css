@@ -1,244 +1,485 @@
-/* Estilos para el componente Nosotros */ 
+/* Estilos para el componente Nosotros con diseño profesional y animaciones */ 
 
 /* Estilos generales para la página Nosotros */
 .nosotros-pagina {
-  font-family: sans-serif; 
-  width: 100%; /* Cambio max-width por width: 100% para ocupar todo el ancho */
-  margin: 0; /* Eliminar margen automático */
-  padding: 0; /* Asegurar que no haya padding */
-  color: #333; 
+  font-family: 'Poppins', sans-serif; 
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: #444;
   background-color: #f8f9fa;
-  overflow-x: hidden; /* Evitar scroll horizontal */
+  overflow-x: hidden;
+  padding-top: 65px; /* Espacio para el navbar fijo */
 }
 
-/* Banner Superior */
+/* Banner Superior con efecto gradiente */
 .sobre-nosotros-banner {
   background: linear-gradient(135deg, var(--primary-color) 0%, #1a2980 100%); 
   color: white;
-  width: 80%;
-  margin: 0 auto; /* Centrar el contenedor */
-  padding-top: 40px ;
-  padding-bottom: 1px;
+  width: 100%;
+  padding: 80px 20px 60px;
   text-align: center;
-  margin-bottom: 5px;
-  border-radius: 0 0 20px 20px;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5); /* Sombra más visible */
-  transition: all 0.3s ease;
-  position: relative; /* Añadido */
-  z-index: 1;         /* Añadido */
+  margin-bottom: 60px;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
 }
 
-.nosotros-banner h1 {
-  font-size: 2.8em; /* Tamaño grande */
-  font-weight: bold;
-  color: #444; /* Un gris oscuro para el título */
+.sobre-nosotros-banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+  z-index: 1;
+  animation: rotar 30s infinite linear;
+}
+
+@keyframes rotar {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.sobre-nosotros-banner h1 {
+  font-size: 3.5em;
+  font-weight: 800;
   margin: 0;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(45deg, #ffffff, #f3f3f3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-/* Sección Sobre Nosotros */
+.banner-decoracion {
+  width: 80px;
+  height: 4px;
+  background-color: var(--secondary-color);
+  margin: 20px auto 0;
+  position: relative;
+  z-index: 2;
+  border-radius: 2px;
+}
+
+/* Sección Sobre Nosotros con efectos de elevación y animación */
 .sobrenosotros-seccion {
-  background-color: #fff; /* Fondo blanco */
-  max-width: 800px; /* Ancho máximo */
-  margin: 0 auto 40px auto; /* Centrado horizontal y margen inferior */
-  padding: 80px;
+  background-color: #fff;
+  max-width: 1000px;
+  margin: 0 auto 80px;
+  padding: 60px;
   text-align: center;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.6s ease, opacity 0.6s ease, box-shadow 0.3s ease;
+}
+
+.sobrenosotros-seccion:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.sobrenosotros-seccion.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.perfil-imagen-contenedor {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto 30px;
 }
 
 .nosotros-perfil-img {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%; /* Círculo perfecto */
-  margin: 0 auto 20px auto; /* Centrado y margen inferior */
-  border: 5px solid #f9a9a0; /* Borde rojo como en la imagen */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid var(--secondary-color);
+  box-shadow: 0 10px 25px rgba(243, 156, 18, 0.3);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
-.nosotros-sobre-nosotros-seccion h2 {
-  font-size: 2.2em;
-  font-weight: bold;
-  margin-bottom: 15px;
-  color: #2c3e50; /* Azul oscuro/grisáceo */
+.perfil-imagen-contenedor:hover .nosotros-perfil-img {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(243, 156, 18, 0.4);
+}
+
+.perfil-imagen-contenedor::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  border-radius: 50%;
+  border: 2px dashed rgba(243, 156, 18, 0.4);
+  animation: girar 30s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes girar {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.sobrenosotros-seccion h2 {
+  font-size: 2.5em;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+  position: relative;
+  display: inline-block;
+}
+
+.sobrenosotros-seccion h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
 }
 
 .nosotros-descripcion {
-  font-size: 1em;
-  line-height: 1.6;
-  color: #555; /* Gris medio */
-  max-width: 600px; /* Limitar ancho del párrafo */
-  margin: 0 auto 25px auto; /* Centrado y margen inferior */
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: #666;
+  max-width: 800px;
+  margin: 30px auto;
 }
 
-.nosotros-credito-imagen {
-  font-size: 0.8em;
-  color: #aaa;
-  margin-bottom: 25px;
-}
-.nosotros-iconos-sociales {
-  display: flex;
-  gap: 15px; /* Espacio entre iconos */
-}
-
-.icono-social {
-  font-size: 1.5em; /* Tamaño de iconos placeholder */
-  color: #e74c3c; /* Rojo para los iconos */
-  cursor: pointer;
-  /* Aquí podrías usar URLs de fondo para imágenes reales de iconos */
-}
-
-/* Botones de Acción */
+/* Botones de Acción con efectos modernos */
 .nosotros-botones-accion {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px; /* Espacio entre botones */
-  flex-wrap: wrap; /* Permitir que los botones pasen a la siguiente línea en pantallas pequeñas */
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 40px;
 }
 
 .boton-principal,
 .boton-secundario {
-  padding: 12px 25px;
-  border-radius: 50px; /* Botones redondeados */
+  padding: 14px 30px;
+  border-radius: 50px;
   font-weight: 600;
-  font-size: 0.9em;
+  font-size: 1em;
   text-decoration: none;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  transition: all 0.3s ease;
   display: inline-block;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
 
 .boton-principal {
-  background-color: #e74c3c; /* Rojo */
+  background: linear-gradient(45deg, var(--secondary-color) 0%, #e67e22 100%);
   color: #fff;
+  box-shadow: 0 5px 15px rgba(243, 156, 18, 0.3);
 }
 
 .boton-principal:hover {
-  background-color: #c0392b; /* Rojo más oscuro */
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(243, 156, 18, 0.4);
 }
 
 .boton-secundario {
   background-color: #fff;
-  color: #555;
-  border: 2px solid #ccc; /* Borde gris */
+  color: #666;
+  border: 2px solid #e0e0e0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .boton-secundario:hover {
-  background-color: #f1f1f1;
-  border-color: #aaa;
-  color: #333;
+  background-color: #f8f9fa;
+  border-color: #ccc;
+  color: #444;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 }
 
+/* Sección de Proceso mejorada con tarjetas y animaciones */
 .nosotros-proceso-seccion {
-  background-color: #f0f0f0; 
-  padding: 40px 20px;
-  margin-bottom: 30px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 80px 20px;
+  margin-bottom: 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.nosotros-proceso-seccion::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: radial-gradient(ellipse at center, rgba(58, 80, 160, 0.05) 0%, rgba(58, 80, 160, 0) 70%);
+  z-index: 0;
 }
 
 .nosotros-proceso-container {
-  max-width: 1700px;
+  max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .nosotros-proceso-container h2 {
   text-align: center;
-  font-size: 1.8em;
-  font-weight: bold;
-  color: #555;
-  margin-bottom: 50px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  font-size: 2.5em;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.nosotros-proceso-container h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
+  border-radius: 2px;
 }
 
 .nosotros-proceso-grid {
   display: flex;
   flex-direction: column;
-  gap: 50px;
-  max-width: 1200px;
-  margin: 0 auto;
-  background-color: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  gap: 40px;
 }
 
 .nosotros-proceso-item {
   display: flex;
   align-items: flex-start;
   gap: 30px;
-  position: relative;
-  padding: 0;
-  background: none;
-  box-shadow: none;
+  background-color: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transform: translateY(30px);
+  opacity: 0;
+  transition: transform 0.6s ease, opacity 0.6s ease, box-shadow 0.3s ease;
+}
+
+.nosotros-proceso-item:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  transform: translateY(-5px) !important;
+}
+
+.nosotros-proceso-item.visible {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .nosotros-proceso-icono-wrap {
-  text-align: center;
   flex-shrink: 0;
-  width: 80px;
 }
 
 .nosotros-proceso-icono {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  margin: 0 auto 10px auto;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
-/* Colores específicos para iconos placeholder */
-.nosotros-proceso-icono.discovery {
-  background-color: #1abc9c; /* Verde/Teal */
-}
-.nosotros-proceso-icono.research {
-  background-color: #f1c40f; /* Amarillo */
-}
-.nosotros-proceso-icono.content {
-  background-color: #e74c3c; /* Rojo */
+.nosotros-proceso-icono:hover {
+  transform: scale(1.1);
 }
 
-.nosotros-proceso-icono-wrap span {
-  font-size: 0.95em;
-  font-weight: 700;
-  color: #777;
+.nosotros-proceso-icono span {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
   text-transform: uppercase;
-  display: block;
 }
 
-/* Línea vertical */
-.nosotros-proceso-item:after {
-  content: '';
-  position: absolute;
-  left: 120px; /* Ajustar según sea necesario */
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background-color: #ddd;
+.nosotros-proceso-icono.discovery {
+  background: linear-gradient(135deg, #1abc9c 0%, #16a085 100%);
 }
 
-.nosotros-proceso-item p {
-  font-size: 0.95em;
-  line-height: 1.6;
-  color: #666;
-  margin: 0;
-  text-align: left;
-  padding-left: 40px;
+.nosotros-proceso-icono.research {
+  background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%);
+}
+
+.nosotros-proceso-icono.content {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+}
+
+.nosotros-proceso-contenido {
   flex: 1;
 }
 
-/* Pie de Página */
-.nosotros-footer {
-  background-color: #e0e0e0; /* Mismo gris que el banner */
-  padding: 20px;
-  text-align: center;
+.nosotros-proceso-contenido h3 {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--primary-color);
 }
 
-.nosotros-footer p {
+.nosotros-proceso-contenido p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: #666;
   margin: 0;
-  color: #555;
+}
+
+/* Sección de Equipo */
+.nosotros-equipo-seccion {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto 80px;
+  text-align: center;
+  transform: translateY(30px);
+  opacity: 0;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.nosotros-equipo-seccion.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.nosotros-equipo-seccion h2 {
+  font-size: 2.5em;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+}
+
+.nosotros-equipo-seccion h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
+}
+
+.equipo-descripcion {
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.equipo-descripcion p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: #666;
+}
+
+.nosotros-equipo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Estilos responsive */
+@media (max-width: 992px) {
+  .sobre-nosotros-banner h1 {
+    font-size: 2.8em;
+  }
+  
+  .sobrenosotros-seccion {
+    padding: 40px 30px;
+  }
+  
+  .nosotros-proceso-item {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sobre-nosotros-banner {
+    padding: 60px 20px 40px;
+  }
+  
+  .sobre-nosotros-banner h1 {
+    font-size: 2.3em;
+  }
+  
+  .nosotros-perfil-img {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .perfil-imagen-contenedor {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .sobrenosotros-seccion h2,
+  .nosotros-proceso-container h2,
+  .nosotros-equipo-seccion h2 {
+    font-size: 2em;
+  }
+  
+  .nosotros-proceso-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 25px;
+  }
+  
+  .nosotros-proceso-icono-wrap {
+    margin-bottom: 20px;
+  }
+  
+  .nosotros-botones-accion {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .boton-principal,
+  .boton-secundario {
+    width: 100%;
+  }
+}
+
+/* Animaciones y transiciones */
+.animacion-scroll {
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.nosotros-proceso-item:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.nosotros-proceso-item:nth-child(2) {
+  transition-delay: 0.3s;
+}
+
+.nosotros-proceso-item:nth-child(3) {
+  transition-delay: 0.5s;
 } 

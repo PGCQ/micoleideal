@@ -1,7 +1,14 @@
 import './App.css';
 import { Footer, Header } from './components'
+import { Link } from 'react-router-dom'
+import { useEffect } from 'react';
 
 function App() {
+  // Efecto para desplazar al inicio de la página cuando se carga
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="App">
       <Header></Header>
@@ -29,7 +36,7 @@ function App() {
               <p>Mejor en los cursos que no sientes que no aprendes, aqui tienes la solucion aqui te mostraremos la forma de mejorar tu rendimiento academico</p>
             </div>
           </div>
-          <button className="read-more-btn">MAS INFORMACIÓN</button>
+          <Link to="/informacion" className="read-more-btn">MAS INFORMACIÓN</Link>
         </section>
 
         {/* 4. Sección "Science Experiment" */}
@@ -37,7 +44,7 @@ function App() {
           <div className="info-text">
             <h3>Mi Cole buscamos por ti la mejor calidad de estudio</h3>
             <p>En mi colegio buscamos por ti la mejor calidad de estudio, para que puedas tener un mejor rendimiento academico, y asi poder tener un futuro mas brillante dando la informacion de los mejores colegios de Perú</p>
-            <button className="read-more-btn">SOBRE NOSOTROS</button>
+            <Link to="/nosotros" className="read-more-btn">SOBRE NOSOTROS</Link>
           </div>
           <div className="info-image-micole"></div>
         </section>
@@ -47,7 +54,7 @@ function App() {
           <div className="seccion-servicio-text">
             <h3>Brindamos servicios de calidad para tu hijo</h3>
             <p>En Mi Cole buscamos por ti la mejor calidad de estudio, para que puedas tener un mejor rendimiento academico, y asi poder tener un futuro mas brillante dando la informacion de los mejores colegios de Perú tambien armamos la mejor estudio academico para tu hijo escribanos en nuestras redes sociales precione el boton para saber mas información</p>
-            <button className="read-more-btn">Servicio</button>
+            <Link to="/servicios" className="read-more-btn">Servicio</Link>
           </div>
         </section>
       </main>
