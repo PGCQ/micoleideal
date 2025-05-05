@@ -17,7 +17,7 @@ const Colegios = () => {
             <Header />
             <div className="colegios-container">
                 <h1 className="titulo-principal">Nuestras sedes</h1>
-                
+
                 <div className="sede-container">
                     <div className="sede-imagen">
                         <img src={colegio1} alt="Colegio Alfa" />
@@ -39,7 +39,7 @@ const Colegios = () => {
                         </div>
                     </div>
                 </div>
-                
+
                 <div className="sede-container reverse">
                     <div className="sede-imagen">
                         <img src={colegio2} alt="Colegio Beta" />
@@ -61,7 +61,7 @@ const Colegios = () => {
                         </div>
                     </div>
                 </div>
-                
+
                 <div className="sede-container">
                     <div className="sede-imagen">
                         <img src={colegio3} alt="Colegio Teta" />
@@ -83,7 +83,7 @@ const Colegios = () => {
                         </div>
                     </div>
                 </div>
-                
+
                 <div className="sede-container reverse">
                     <div className="sede-imagen">
                         <img src={colegio4} alt="Sede SJL" />

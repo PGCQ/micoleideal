@@ -1,9 +1,7 @@
 /* 1. Barra Superior */
-.cabecera-seccion {
+.cabecera{
     background: linear-gradient(135deg, var(--primary-color) 0%, #1a2980 100%);
     padding: 15px 5%;
-    display: flex;
-    justify-content: space-between;
     align-items: center;
     font-size: 1em;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
@@ -20,8 +18,13 @@
     padding: 10px 5%;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
+.cabecera-contenido{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
 
-.cabecera-seccion a {
+.cabecera a {
     color: white;
     text-decoration: none;
     display: inline-flex;
@@ -70,7 +73,7 @@
     }
 }
 
-.cabecera-seccion a h1 {
+.cabecera a h1 {
     margin: 0;
     font-size: 2em;
     font-weight: 800;
@@ -154,7 +157,11 @@ $ruta-imagenes: '../../assets/img/';
 .contenido-seccion {
     position: relative;
     color: white;
+<<<<<<< HEAD
     height: 80vh; /* Aumentado para más impacto visual */
+=======
+    height: 45vh;
+>>>>>>> a4853b7380ff8fb8d8f23e5727b7f49d5a56f149
     display: flex;
     align-items: flex-end;
     overflow: hidden;

@@ -1,7 +1,10 @@
 import './App.css';
-import { Footer, Header } from './components'
+import { Footer, Header, CardMejores } from './components'
 import { Link } from 'react-router-dom'
 import { useEffect } from 'react';
+import imagenColegio2 from './assets/img/colegio-2.png'
+import imagenAcademia2 from './assets/img/academia-2.jpg'
+import imagenAcademia3 from './assets/img/academia-3.jpg'
 
 function App() {
   // Efecto para desplazar al inicio de la página cuando se carga
@@ -9,32 +12,26 @@ function App() {
     window.scrollTo(0, 0);
   }, []);
 
+  const mejoresAcademias = [
+    { id: 1, imagen: imagenColegio2, nombre: "Academia de Inglés", descripcion: "Aprende inglés con los mejores profesores de Perú, gramática, vocabulario, conversación, etc" },
+    { id: 2, imagen: imagenAcademia2, nombre: "Academia de Matemáticas", descripcion: "Aprende matemáticas con los mejores profesores de Perú, razonamiento matemático, aritmética, álgebra, geometría, trigonometría, cálculo, etc" },
+    { id: 3, imagen: imagenAcademia3, nombre: "Rendimiento Académico", descripcion: "Mejora en los cursos que no sientes que no aprendes, aquí tienes la solución aquí te mostraremos la forma de mejorar tu rendimiento académico" }
+  ]
+
   return (
     <div className="App">
       <Header></Header>
-
       <main>
         {/* 3. Sección "Academias de Perú" */}
         <section className="seccion-academias">
           <h2>Las mejores academias de Perú</h2>
           <div className="tarjetas-1">
-            <div className="tarjeta-2">
-              <div className="imagen-leccion-placeholder">
-
-              </div>
-              <h3>Academia de Inglés</h3>
-              <p>Aprende inglés con los mejores profesores de Perú, gramatica, vocabulario, conversacion, etc</p>
-            </div>
-            <div className="tarjeta-2">
-              <div className="imagen-leccion-placeholder lesson__matematica"></div>
-              <h3>Aprende Matemática</h3>
-              <p>Aprende matemática con los mejores profesores de Perú razonamiento matematico, aritmetica, algebra, geometria, trigonometria, calculo, etc</p>
-            </div>
-            <div className="tarjeta-2">
-              <div className="imagen-leccion-placeholder lesson__RendimientoAcademico"></div>
-              <h3>Rendimiento Académico</h3>
-              <p>Mejor en los cursos que no sientes que no aprendes, aqui tienes la solucion aqui te mostraremos la forma de mejorar tu rendimiento academico</p>
-            </div>
+            {mejoresAcademias.map(academia => (<CardMejores
+              key={academia.id}
+              imagen={academia.imagen}
+              titulo={academia.nombre}
+              descripcion={academia.descripcion}>
+            </CardMejores>))}
           </div>
           <Link to="/informacion" className="read-more-btn">MAS INFORMACIÓN</Link>
         </section>

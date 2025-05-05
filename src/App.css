@@ -10,10 +10,11 @@
   --light-color: #f8f9fa;
   --text-color: #333;
   --light-text: #ffffff;
-  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
   --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08);
   --shadow-lg: 0 15px 30px rgba(0, 0, 0, 0.11), 0 5px 15px rgba(0, 0, 0, 0.08);
+  --ancho-maximo: 1200px;
 }
 
 body {
@@ -35,6 +36,13 @@ h4 {
 
 .App {
   overflow-x: hidden;
+  position: relative;
+}
+
+.contenedor {
+  margin: 0 auto;
+  width: 100%;
+  max-width: var(--ancho-maximo);
 }
 
 /* --- Estilos de las secciones --- */
@@ -141,52 +149,6 @@ h4 {
   margin-bottom: 50px;
   z-index: 1;
   position: relative;
-}
-
-.tarjeta-2 {
-  flex-basis: 30%;
-  min-width: 250px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  transition: var(--transition);
-  position: relative;
-  background-color: white;
-  transform: translateY(0);
-}
-
-.tarjeta-2:hover {
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-lg);
-}
-
-.imagen-leccion-placeholder {
-  height: 220px;
-  display: block;
-  background-image: url('assets/img/colegio-2.png');
-  background-size: cover;
-  background-position: 10px -10px;
-  background-repeat: no-repeat;
-  position: relative;
-  transition: var(--transition);
-}
-
-.tarjeta-2:hover .imagen-leccion-placeholder {
-  transform: scale(1.05);
-}
-
-.lesson__matematica {
-  background-image: url('assets/img/academia-2.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.lesson__RendimientoAcademico {
-  background-image: url('assets/img/academia-3.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 .lesson-card h3 {

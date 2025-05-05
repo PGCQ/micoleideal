@@ -6,18 +6,12 @@ import App from './App.jsx'
 import Colegios from './paginas/Colegios.jsx'
 import Nosotros from './paginas/Nosotros.jsx'
 import Servicios from './paginas/Servicios.jsx'
+import Contacto from './paginas/Contacto.jsx'
 
 // Componentes temporales para las páginas que faltan
 const ColegiosTemp = () => (
   <div style={{ paddingTop: '80px', textAlign: 'center' }}>
     <h1>Página de Colegios</h1>
-    <p>Esta página está en construcción.</p>
-  </div>
-);
-
-const Contacto = () => (
-  <div style={{ paddingTop: '80px', textAlign: 'center' }}>
-    <h1>Página de Contacto</h1>
     <p>Esta página está en construcción.</p>
   </div>
 );
