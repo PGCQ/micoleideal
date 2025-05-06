@@ -7,7 +7,7 @@ import servicioAsesoria from '../assets/img/academia-2.jpg';
 import servicioInformacion from '../assets/img/academia-3.jpg';
 
 const Servicios = () => {
-    // Añadir efecto para desplazar al inicio de la página cuando se carga
+   
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
