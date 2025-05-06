@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import "./styles.scss"
 
@@ -8,6 +8,29 @@ const Header = () => {
     
     // Estado para el scroll
     const [scrolled, setScrolled] = useState(false);
+    
+    // Estado para el submenú de Colegios
+    const [subMenuVisible, setSubMenuVisible] = useState(false);
+    
+    // Referencia para el dropdown
+    const dropdownRef = useRef(null);
+    
+    // Efecto para detectar clics fuera del submenú
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setSubMenuVisible(false);
+            }
+        };
+
+        // Añadir listener para clics en el documento
+        document.addEventListener('mousedown', handleClickOutside);
+        
+        // Limpieza del listener
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
     
     // Efecto para detectar el scroll
     useEffect(() => {
@@ -61,6 +84,17 @@ const Header = () => {
         return location.pathname === path;
     };
 
+    // Verificar si alguna subruta está activa
+    const isSubRouteActive = (paths) => {
+        return paths.some(path => location.pathname === path);
+    };
+
+    // Manejar clic en el botón del menú
+    const handleMenuClick = (e) => {
+        e.preventDefault();
+        setSubMenuVisible(!subMenuVisible);
+    };
+
     return (
         <>
             <div className={`cabecera ${scrolled ? 'scrolled' : ''}`}>
@@ -72,8 +106,36 @@ const Header = () => {
                         </Link>
                         <nav className="cabecera-navegacion">
                             <ul>
+                                <li className="menu-item-with-submenu" ref={dropdownRef}>
+                                    <Link 
+                                        to="#" 
+                                        className={isSubRouteActive(["/colegios", "/instituciones"]) ? 'active' : ''}
+                                        onClick={handleMenuClick}
+                                    >
+                                        Colegios <i className={`fas fa-chevron-down submenu-icon ${subMenuVisible ? 'rotate' : ''}`}></i>
+                                    </Link>
+                                    {subMenuVisible && (
+                                        <ul className="submenu submenu-vertical">
+                                            <li>
+                                                <Link 
+                                                    to="/colegios" 
+                                                    className={isActive("/colegios") ? 'active' : ''}
+                                                >
+                                                    Colegios
+                                                </Link>
+                                            </li>
+                                            <li>
+                                                <Link 
+                                                    to="/instituciones" 
+                                                    className={isActive("/instituciones") ? 'active' : ''}
+                                                >
+                                                    Academias
+                                                </Link>
+                                            </li>
+                                        </ul>
+                                    )}
+                                </li>
                                 {[
-                                    { label: "Colegios", path: "/colegios" },
                                     { label: "Información", path: "/informacion" },
                                     { label: "Sobre Nosotros", path: "/nosotros" },
                                     { label: "Contacto", path: "/contacto" },

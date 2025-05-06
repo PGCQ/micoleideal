@@ -86,7 +86,7 @@ const Contacto = () => {
                 <FaMapMarkerAlt className="info-icon" />
                 <div>
                   <h3>Dirección</h3>
-                  <p>Av. Las Palmeras 123, Lima, Perú</p>
+                  <p>Av. virtual Cibertec, Lima, Perú</p>
                 </div>
               </div>
               
@@ -94,7 +94,7 @@ const Contacto = () => {
                 <FaPhone className="info-icon" />
                 <div>
                   <h3>Teléfono</h3>
-                  <p>+51 987 654 321</p>
+                  <p>+51 978 194 385</p>
                 </div>
               </div>
               
@@ -102,7 +102,7 @@ const Contacto = () => {
                 <FaEnvelope className="info-icon" />
                 <div>
                   <h3>Email</h3>
-                  <p>info@micole.edu.pe</p>
+                  <p>cibertecalumnos@gmail.com</p>
                 </div>
               </div>
             </div>

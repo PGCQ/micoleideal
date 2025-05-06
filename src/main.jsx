@@ -7,21 +7,16 @@ import Colegios from './paginas/Colegios.jsx'
 import Nosotros from './paginas/Nosotros.jsx'
 import Servicios from './paginas/Servicios.jsx'
 import Contacto from './paginas/Contacto.jsx'
-
-// Componentes temporales para las páginas que faltan
-const ColegiosTemp = () => (
-  <div style={{ paddingTop: '80px', textAlign: 'center' }}>
-    <h1>Página de Colegios</h1>
-    <p>Esta página está en construcción.</p>
-  </div>
-);
+import Instituciones from './paginas/instituciones.jsx'
+import Colegiosub from './paginas/Colegiosub.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <HashRouter hashType="noslash">
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/colegios" element={<ColegiosTemp />} />
+        <Route path="/colegios" element={<Colegiosub />} />
+        <Route path="/instituciones" element={<Instituciones />} />
         <Route path="/nosotros" element={<Nosotros />} />
         <Route path="/servicios" element={<Servicios />} />
         <Route path="/informacion" element={<Colegios />} />

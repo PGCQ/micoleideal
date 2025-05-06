@@ -165,6 +165,72 @@
     box-shadow: 0 5px 15px rgba(243, 156, 18, 0.3);
 }
 
+/* Estilos para el submenú */
+.menu-item-with-submenu {
+    position: relative;
+}
+
+.submenu-icon {
+    margin-left: 6px;
+    font-size: 0.8em;
+    transition: transform 0.3s ease;
+}
+
+.submenu-icon.rotate {
+    transform: rotate(180deg);
+}
+
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #1a2980 100%);
+    border-radius: 10px;
+    padding: 10px 0;
+    width: 180px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(5px);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.submenu-vertical {
+    display: flex;
+    flex-direction: column;
+}
+
+.submenu li {
+    margin: 0;
+    width: 100%;
+}
+
+.submenu a {
+    display: block;
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    transition: all 0.3s ease;
+}
+
+.submenu a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+    box-shadow: none;
+}
+
+.submenu a.active {
+    background: linear-gradient(90deg, var(--secondary-color) 0%, #e67e22 100%);
+}
+
+.submenu a:before {
+    display: none;
+}
+
 /* 2. Sección contenido*/
 $ruta-imagenes: '../../assets/img/';
 
@@ -312,5 +378,19 @@ $ruta-imagenes: '../../assets/img/';
     
     .contenido-tarjeta p {
         font-size: 1.1em;
+    }
+    
+    .submenu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        padding: 5px 0;
+        margin-top: 5px;
+    }
+    
+    .submenu a {
+        padding: 8px 15px;
     }
 }
