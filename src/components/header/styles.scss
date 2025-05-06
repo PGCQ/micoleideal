@@ -1,7 +1,7 @@
 /* 1. Barra Superior */
 .cabecera{
     background: linear-gradient(135deg, var(--primary-color) 0%, #1a2980 100%);
-    padding: 15px 5%;
+    padding: 15px 0;
     align-items: center;
     font-size: 1em;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
@@ -11,31 +11,37 @@
     width: 100%;
     z-index: 1000;
     transition: padding 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+    height: 70px;
+    display: flex;
 }
 
-/* Efecto de cambio de tamaño al hacer scroll */
 .cabecera-seccion.scrolled {
-    padding: 10px 5%;
+    padding: 10px 0;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 .cabecera-contenido{
     width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
 }
 
 .cabecera a {
     color: white;
     text-decoration: none;
     display: inline-flex;
-    align-items: center;
+    align-items: center;    
 }
 
 .logo-container {
     display: flex;
     align-items: center;
     gap: 15px;
-    position: relative;
+    position: absolute;
+    left: 80px;
     overflow: hidden;
 }
 
@@ -89,6 +95,14 @@
 
 .logo-container:hover h1 {
     transform: scale(1.05);
+}
+
+.cabecera-navegacion {
+    display: flex;
+     justify-content: center;
+    margin-right: 0;
+    position: absolute;
+    right: 20px;
 }
 
 .cabecera-navegacion ul {
@@ -157,11 +171,8 @@ $ruta-imagenes: '../../assets/img/';
 .contenido-seccion {
     position: relative;
     color: white;
-<<<<<<< HEAD
-    height: 80vh; /* Aumentado para más impacto visual */
-=======
-    height: 45vh;
->>>>>>> a4853b7380ff8fb8d8f23e5727b7f49d5a56f149
+    /* Aumentado para más impacto visual */
+    height: 80vh;
     display: flex;
     align-items: flex-end;
     overflow: hidden;

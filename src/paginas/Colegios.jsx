@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import './Colegios.css';
-import { Header, Footer } from '../components';
+import { Footer } from '../components';
+import Header from '../components/header/index';
 import colegio1 from '../assets/img/colegio--1.png';
 import colegio2 from '../assets/img/colegio--2.png';
 import colegio3 from '../assets/img/colegio--3.png';

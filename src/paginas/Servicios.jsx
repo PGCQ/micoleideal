@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import './Servicios.css';
-import { Header, Footer } from '../components';
+import { Footer } from '../components';
+import Header from '../components/header/index';
 import servicioComparacion from '../assets/img/colegio-2.png';
 import servicioAsesoria from '../assets/img/academia-2.jpg';
 import servicioInformacion from '../assets/img/academia-3.jpg';

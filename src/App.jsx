@@ -1,5 +1,6 @@
 import './App.css';
-import { Footer, Header, CardMejores } from './components'
+import { Footer, CardMejores } from './components'
+import Header from './components/header/index'
 import { Link } from 'react-router-dom'
 import { useEffect } from 'react';
 import imagenColegio2 from './assets/img/colegio-2.png'

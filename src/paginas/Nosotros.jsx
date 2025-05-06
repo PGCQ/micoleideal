@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import './Nosotros.css';
-import { Header, Footer } from '../components';
+import { Footer } from '../components';
+import Header from '../components/header/index';
 import imagenPerfil from '../assets/img/trabajadores.png';
 
 // Componentes mejorados para los iconos de proceso

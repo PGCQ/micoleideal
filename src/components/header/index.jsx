@@ -63,31 +63,35 @@ const Header = () => {
 
     return (
         <>
-            <div className={`cabecera-seccion ${scrolled ? 'scrolled' : ''}`}>
-                <Link to="/" className="logo-container">
-                    <h1>Mi Cole</h1>
-                    <i className="fas fa-user-graduate logo-icon"></i>
-                </Link>
-                <nav className="cabecera-navegacion">
-                    <ul>
-                        {[
-                            { label: "Colegios", path: "/colegios" },
-                            { label: "Información", path: "/informacion" },
-                            { label: "Sobre Nosotros", path: "/nosotros" },
-                            { label: "Contacto", path: "/contacto" },
-                            { label: "Servicios", path: "/servicios" },
-                        ].map(item => (
-                            <li key={item.label}>
-                                <Link 
-                                    to={item.path} 
-                                    className={isActive(item.path) ? 'active' : ''}
-                                >
-                                    {item.label}
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
-                </nav>
+            <div className={`cabecera ${scrolled ? 'scrolled' : ''}`}>
+                <div className="contenedor">
+                    <div className="cabecera-contenido">
+                        <Link to="/" className="logo-container">
+                            <h1>Mi Cole</h1>
+                            <i className="fas fa-user-graduate logo-icon"></i>
+                        </Link>
+                        <nav className="cabecera-navegacion">
+                            <ul>
+                                {[
+                                    { label: "Colegios", path: "/colegios" },
+                                    { label: "Información", path: "/informacion" },
+                                    { label: "Sobre Nosotros", path: "/nosotros" },
+                                    { label: "Contacto", path: "/contacto" },
+                                    { label: "Servicios", path: "/servicios" },
+                                ].map(item => (
+                                    <li key={item.label}>
+                                        <Link 
+                                            to={item.path} 
+                                            className={isActive(item.path) ? 'active' : ''}
+                                        >
+                                            {item.label}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
             </div>
 
             {/* Solo mostramos el carrusel en la página principal */}

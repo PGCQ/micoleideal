@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { FaInstagram, FaFacebookF, FaWhatsapp } from 'react-icons/fa';
 import './Contacto.css';
-import { Footer, Header } from '../components'
+import { Footer } from '../components';
+import Header from '../components/header/index';
 import imagen from '../assets/img/contacto.png'
 
 const Contacto = () => {
